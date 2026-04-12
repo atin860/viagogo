@@ -12,25 +12,14 @@
 
     <header>
         <div class="container header-content">
-            <div style="display: flex; align-items: center; gap: 30px;">
-                <a href="index.html" class="logo-container">
-                    <div class="logo-text" style="font-size: 24px;"><span class="logo-black">via</span><span
-                            class="logo-green">go</span><span class="logo-black">go</span></div>
-                </a>
-
-                <div class="match-header-info" style="border-left: 1px solid #eee; padding-left: 20px;">
-                    <div class="match-thumb" style="width: 40px; height: 40px;">
-                        <img src="hero.png" alt="Match">
-                    </div>
-                    <div class="match-details">
-                        <h2 id="matchTitle" style="font-size: 14px;">Rajasthan Royals vs Mumbai Indians</h2>
-                        <p style="font-size: 11px;">Tue · Apr 7 · 7:30 PM | ACA Stadium</p>
-                    </div>
+            <div class="match-header-info">
+                <div class="match-thumb">
+                    <img src="hero.png" alt="Match">
                 </div>
-            </div>
-
-            <div class="search-bar">
-                <input type="text" placeholder="Search for events, venues or cities...">
+                <div class="match-details">
+                    <h2 id="matchTitle">Rajasthan Royals vs Mumbai Indians</h2>
+                    <p>Tue · Apr 7 · 7:30 PM | ACA Stadium</p>
+                </div>
             </div>
         </div>
     </header>
@@ -40,9 +29,8 @@
     </div>
 
     <main class="container page3-layout">
-        <!-- Left: Canvas Stadium -->
         <div class="stadium-container">
-            <canvas id="stadiumCanvas"></canvas>
+            <svg id="stadiumSvg" viewBox="0 0 600 600" width="100%" height="auto"></svg>
             <div style="margin-top: 20px; text-align: center;">
                 <h3 style="font-weight: 800;">Interactive Seat Map</h3>
                 <p style="font-size: 14px; color: #666; margin-top: 5px;">Click on a section to select your preferred
@@ -124,7 +112,7 @@
     <script src="js/stadium.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            new StadiumMap('stadiumCanvas');
+            new StadiumMap('stadiumSvg');
 
             const match = localStorage.getItem('selectedMatch');
             if (match === 'DC vs GT') {

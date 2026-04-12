@@ -386,14 +386,16 @@ input:checked+.slider:before {
 
 /* Page 3 Seat Map Layout */
 .page3-layout {
-    display: grid;
-    grid-template-columns: 1fr 480px;
+    display: flex;
+    align-items: flex-start;
     gap: 30px;
-    margin-top: 25px;
-    padding-bottom: 50px;
+    margin-top: 0;
+    padding-bottom: 0;
+    height: calc(100vh - 80px); /* Assuming header is ~80px */
 }
 
 .stadium-container {
+    flex: 1;
     background: white;
     border-radius: 20px;
     padding: 30px;
@@ -401,8 +403,10 @@ input:checked+.slider:before {
     flex-direction: column;
     align-items: center;
     position: sticky;
-    top: 100px;
-    height: calc(100vh - 150px);
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+    justify-content: center;
 }
 
 #stadiumCanvas {
@@ -412,8 +416,42 @@ input:checked+.slider:before {
 }
 
 .listings-panel {
+    width: 480px;
     overflow-y: auto;
-    max-height: calc(100vh - 120px);
+    height: 100%;
+    padding: 20px 10px 20px 0;
+}
+
+.stadium-section {
+    cursor: pointer;
+    transition: fill 0.2s, stroke 0.2s;
+}
+
+.stadium-section:hover {
+    fill: #9ccc65;
+}
+
+.stadium-section.selected {
+    fill: #689f38;
+    stroke: #33691e;
+    stroke-width: 3px;
+}
+
+@media (max-width: 992px) {
+    .page3-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    .stadium-container {
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+    .listings-panel {
+        width: 100%;
+        max-height: 50vh;
+        padding: 20px;
+    }
 }
 
 .listing-card {
