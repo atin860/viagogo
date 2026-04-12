@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viagogo | IPL Tickets</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content" style="justify-content: flex-start;">
+            <a href="index.html" class="logo-container">
+                <div class="logo-text"><span class="logo-black">via</span><span class="logo-green">go</span><span
+                        class="logo-black">go</span></div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Hero Section -->
+            <section
+                style="display: grid; grid-template-columns: 1fr 450px; gap: 40px; padding: 40px 0; align-items: start;">
+                <div class="hero-text-area">
+                    <h1 style="font-size: 56px; font-weight: 800; line-height: 1.1; margin-bottom: 25px;">Indian Premier
+                        League Tickets</h1>
+
+                    <div class="info-banner"
+                        style="margin: 0; background: #e7f3ff; color: #004085; border: none; font-weight: 500;">
+                        <span style="font-size: 18px;">👤</span>
+                        <span>4,747 people viewed Indian Premier League events in the past hour</span>
+                    </div>
+                </div>
+
+                <div class="hero-image" style="height: 300px; border-radius: 12px; margin-top: 20px;">
+                    <img src="hero.png" alt="IPL Stadium">
+                </div>
+            </section>
+
+            <!-- Events List -->
+            <section style="padding-top: 20px;">
+                <h2 style="font-size: 22px; margin-bottom: 25px;">58 events in all locations</h2>
+
+                <!-- Professional Event Card 1 -->
+                <div class="event-card"
+                    style="grid-template-columns: 100px 1fr 150px; padding: 0; border: 1px solid #f0f0f0; overflow: hidden; height: 110px;">
+                    <div
+                        style="background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid #f0f0f0;">
+                        <div style="font-size: 14px; color: #333; font-weight: 600;">Apr</div>
+                        <div style="font-size: 24px; font-weight: 800; color: #333;">7</div>
+                        <div style="font-size: 12px; color: #666; font-weight: 500;">Tue</div>
+                    </div>
+
+                    <div style="padding: 15px 25px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 18px; font-weight: 700;">Rajasthan Royals vs Mumbai Indians</h3>
+                        <div
+                            style="font-size: 13px; color: #666; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+                            <span>7:30 PM • 🇮🇳 Guwahati, Assam, India • ACA Stadium</span>
+                        </div>
+                        <div class="tag-row" style="margin-top: 10px;">
+                            <span class="tag"
+                                style="background: #f5f5f5; border: 1px solid #eee; display: flex; align-items: center; gap: 5px;">📅
+                                Today</span>
+                            <span class="tag"
+                                style="background: #fff0f0; color: #d32f2f; display: flex; align-items: center; gap: 5px;">🎟️
+                                Only 1% of tickets left</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; padding-right: 25px;">
+                        <button class="btn-green"
+                            style="background: #fff; color: #000; border: 1.5px solid #ddd; padding: 10px 20px; font-size: 14px; width: 120px;"
+                            onclick="openModal('RR vs MI')">See tickets</button>
+                    </div>
+                </div>
+
+                <!-- Professional Event Card 2 -->
+                <div class="event-card"
+                    style="grid-template-columns: 100px 1fr 150px; padding: 0; border: 1px solid #f0f0f0; overflow: hidden; height: 110px;">
+                    <div
+                        style="background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid #f0f0f0;">
+                        <div style="font-size: 14px; color: #333; font-weight: 600;">Apr</div>
+                        <div style="font-size: 24px; font-weight: 800; color: #333;">8</div>
+                        <div style="font-size: 12px; color: #666; font-weight: 500;">Wed</div>
+                    </div>
+
+                    <div style="padding: 15px 25px; display: flex; flex-direction: column; justify-content: center;">
+                        <h3 style="font-size: 18px; font-weight: 700;">Delhi Capitals vs Gujarat Titans</h3>
+                        <div
+                            style="font-size: 13px; color: #666; margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+                            <span>7:30 PM • 🇮🇳 Delhi, India • Arun Jaitley Stadium</span>
+                        </div>
+                        <div class="tag-row" style="margin-top: 10px;">
+                            <span class="tag"
+                                style="background: #f5f5f5; border: 1px solid #eee; display: flex; align-items: center; gap: 5px;">📅
+                                Tomorrow</span>
+                            <span class="tag"
+                                style="background: #fff0f0; color: #d32f2f; display: flex; align-items: center; gap: 5px;">🎟️
+                                Only 1% of tickets left</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; justify-content: center; padding-right: 25px;">
+                        <button class="btn-green"
+                            style="background: #fff; color: #000; border: 1.5px solid #ddd; padding: 10px 20px; font-size: 14px; width: 120px;"
+                            onclick="openModal('DC vs GT')">See tickets</button>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal (Page 2) -->
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-card">
+            <span style="position: absolute; top: 20px; right: 20px; font-size: 24px; cursor: pointer; color: #999;"
+                onclick="closeModal()">&times;</span>
+            <h2>How many tickets?</h2>
+
+            <select>
+                <option value="1">1 ticket</option>
+                <option value="2" selected>2 tickets</option>
+                <option value="3">3 tickets</option>
+                <option value="4">4 tickets</option>
+            </select>
+
+            <div class="toggle-container">
+                <span style="font-weight: 600;">We want to be seated together</span>
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <p style="font-size: 13px; color: #666; margin-bottom: 30px;">
+                We will find you the best available tickets based on your selection.
+            </p>
+
+            <a href="stadium.html" class="btn-green" style="width: 100%;">Continue</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(match) {
+            document.getElementById('modalOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            localStorage.setItem('selectedMatch', match);
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+
+</html>

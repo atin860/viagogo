@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>viagogo | Seat Map</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div style="display: flex; align-items: center; gap: 30px;">
+                <a href="index.html" class="logo-container">
+                    <div class="logo-text" style="font-size: 24px;"><span class="logo-black">via</span><span
+                            class="logo-green">go</span><span class="logo-black">go</span></div>
+                </a>
+
+                <div class="match-header-info" style="border-left: 1px solid #eee; padding-left: 20px;">
+                    <div class="match-thumb" style="width: 40px; height: 40px;">
+                        <img src="hero.png" alt="Match">
+                    </div>
+                    <div class="match-details">
+                        <h2 id="matchTitle" style="font-size: 14px;">Rajasthan Royals vs Mumbai Indians</h2>
+                        <p style="font-size: 11px;">Tue · Apr 7 · 7:30 PM | ACA Stadium</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, venues or cities...">
+            </div>
+        </div>
+    </header>
+
+    <div class="urgency-banner">
+        🔥 Only 1% of tickets left for this event
+    </div>
+
+    <main class="container page3-layout">
+        <!-- Left: Canvas Stadium -->
+        <div class="stadium-container">
+            <canvas id="stadiumCanvas"></canvas>
+            <div style="margin-top: 20px; text-align: center;">
+                <h3 style="font-weight: 800;">Interactive Seat Map</h3>
+                <p style="font-size: 14px; color: #666; margin-top: 5px;">Click on a section to select your preferred
+                    seating area.</p>
+            </div>
+        </div>
+
+        <!-- Right: Listings -->
+        <div class="listings-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="font-size: 20px; font-weight: 800;">9 listings found</h3>
+                <button
+                    style="padding: 8px 16px; border: none; border-radius: 20px; background: #eee; font-weight: 600;">2
+                    tickets ▾</button>
+            </div>
+
+            <!-- Listing 1 -->
+            <div class="listing-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                    <div class="listing-info">
+                        <h4>Section North Stand A 3rd Flr.</h4>
+                        <p>Row U • 2 tickets together</p>
+                    </div>
+                    <div class="badges-row">
+                        <span class="badge badge-blue">Instant Download</span>
+                        <span class="badge badge-green">Clear view</span>
+                    </div>
+                </div>
+                <div class="badges-row">
+                    <span class="badge badge-orange">Best price</span>
+                    <span class="badge badge-orange">Last tickets</span>
+                    <span class="badge badge-red">Only 3 left!</span>
+                </div>
+                <div
+                    style="display:flex; justify-content:space-between; align-items:flex-end; margin-top: 10px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+                    <span
+                        style="background: #f1f8e9; color: #33691e; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 800;">10.0
+                        Amazing</span>
+                    <div class="price-section">
+                        <div class="old-price">€17</div>
+                        <div class="current-price">€13</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listing 2 -->
+            <div class="listing-card">
+                <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+                    <div class="listing-info">
+                        <h4>Section North Stand G 3rd Flr.</h4>
+                        <p>Row R • 2 tickets together</p>
+                    </div>
+                    <div class="badges-row">
+                        <span class="badge badge-blue">Instant Download</span>
+                        <span class="badge badge-green">Clear view</span>
+                    </div>
+                </div>
+                <div class="badges-row">
+                    <span class="badge badge-green">30% off</span>
+                    <span class="badge badge-orange">Last tickets</span>
+                    <span class="badge badge-red">Only 4 left</span>
+                </div>
+                <div
+                    style="display:flex; justify-content:space-between; align-items:flex-end; margin-top: 10px; padding-top: 15px; border-top: 1px solid #f0f0f0;">
+                    <span
+                        style="background: #f1f8e9; color: #33691e; padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 800;">9.5
+                        Great</span>
+                    <div class="price-section">
+                        <div class="old-price">€42</div>
+                        <div class="current-price">€30</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More listings can be added here -->
+        </div>
+    </main>
+
+    <script src="js/stadium.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            new StadiumMap('stadiumCanvas');
+
+            const match = localStorage.getItem('selectedMatch');
+            if (match === 'DC vs GT') {
+                document.getElementById('matchTitle').innerText = 'Delhi Capitals vs Gujarat Titans';
+            }
+        });
+    </script>
+</body>
+
+</html>
