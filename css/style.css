@@ -181,6 +181,7 @@ nav.nav-links a {
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     height: 340px;
+    width: 480px;
 }
 
 .hero-image img {
